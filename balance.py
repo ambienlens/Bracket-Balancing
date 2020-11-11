@@ -33,12 +33,15 @@ def checkBalance(brackets):
     while (size!=0):
         ch = brackets[i]                                                      
 
-        if((ch == "(") or (ch == "{") or (ch == "[")):                   
-            stack.append(ch)
+        if((ch == "(") or (ch == "{") or (ch == "[")):  
+            #checking for opening brackets and then adding them to stack
+            stack.append(ch)                       
             c=c+1
         elif((ch == ")") or (ch == "}") or (ch == "]")):
+            #assigning the last value entered in the stack to "lastElement"
             lastElement = stack[-1]                                       
             if(checkBrackets(lastElement)==checkBrackets(ch)):
+                #deleting element from the stack if entered and last value matched
                 stack.pop()                                                   
                 c=c-1
             else:
@@ -48,6 +51,7 @@ def checkBalance(brackets):
         i=i+1
         size = size-1
     
+    #RETURNING BOOLEAN OUTPUT
     if(c==0):
         return True
     else:
@@ -56,6 +60,7 @@ def checkBalance(brackets):
 #MAIN BLOCK
 N = int(input("Enter the no of checkings: "))                                  
 i=0
+
 while(N!=0):
     print("EXPRESSION NO: %s"%(i+1))
     user_input = input("Enter your expression: ")
@@ -70,5 +75,6 @@ while(N!=0):
     
     i=i+1
     N=N-1
-    print() 
+    print()
+    
 #END OF CODE
