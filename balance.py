@@ -1,5 +1,5 @@
 #DEBAYAN MAJUMDER 2020
-#Version 2.1
+#Version 2.2
 #THIS PROGRAM CHECKS THE BALANCE OF BRACKETS IN A CODE.
 #IT CHECKS IF A BRACKET WHICH WAS OPENED, IS CLOSED OR NOT.
 
@@ -66,7 +66,7 @@ while(N!=0):
     print("EXPRESSION NO: %s"%(i+1))
     user_input = input("Enter your expression: ")
     if(checkForNull(user_input)==0):
-        print("ENTER A VALID EXPRESSION/CODE")
+        print("ENTER A VALID EXPRESSION/CODE!!")
         i = i - 1
         N = N + 1
     elif(checkBalance(user_input)):
