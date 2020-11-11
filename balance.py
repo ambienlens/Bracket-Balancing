@@ -1,5 +1,5 @@
 #DEBAYAN MAJUMDER 2020
-#Version 2.2
+#Version 2.2.1
 #THIS PROGRAM CHECKS THE BALANCE OF BRACKETS IN A CODE.
 #IT CHECKS IF A BRACKET WHICH WAS OPENED, IS CLOSED OR NOT.
 
@@ -59,7 +59,7 @@ def checkBalance(brackets):
         return False                                                          
 
 #MAIN BLOCK
-N = int(input("Enter the no of checkings: "))                                  
+N = int(input("Enter the no of Checkings: "))                                  
 i=0
 
 while(N!=0):
