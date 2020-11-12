@@ -1,5 +1,7 @@
 #DEBAYAN MAJUMDER 2020
-#Version 2.2.1
+#Version 2.3
+#Version 3 coming soon (Would take input a file path to check the balance)
+
 #THIS PROGRAM CHECKS THE BALANCE OF BRACKETS IN A CODE.
 #IT CHECKS IF A BRACKET WHICH WAS OPENED, IS CLOSED OR NOT.
 
@@ -25,7 +27,7 @@ def checkForNull(code):
             
     return c
 
-#ORIGINAL FUNCTION
+#ORIGINAL FUNCTION TO CHECK BRACKET BALANCE
 def checkBalance(brackets):                                                  
     size = len(brackets)
     i=0
@@ -49,6 +51,7 @@ def checkBalance(brackets):
                 stack.append(ch)
                 c=c+1
         
+        #updating the values
         i=i+1
         size = size-1
     
@@ -59,14 +62,17 @@ def checkBalance(brackets):
         return False                                                          
 
 #MAIN BLOCK
-N = int(input("Enter the no of Checkings: "))                                  
+N = int(input("Enter the no of Checkings to be done: "))                                  
 i=0
 
 while(N!=0):
     print("EXPRESSION NO: %s"%(i+1))
     user_input = input("Enter your expression: ")
+
+    #main fuction calls going here
+    #checking even if brackets exists, if yes it checks balance
     if(checkForNull(user_input)==0):
-        print("ENTER A VALID EXPRESSION/CODE!!")
+        print("ENTER A VALID EXPRESSION/CODE")
         i = i - 1
         N = N + 1
     elif(checkBalance(user_input)):
