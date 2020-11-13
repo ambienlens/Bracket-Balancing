@@ -1,6 +1,7 @@
 #DEBAYAN MAJUMDER 2020
-#Version 2.3
-#Version 3 coming soon (Would take input a file path to check the balance)
+#Version 3
+#Version 3 comes with the support of reading multiple files(It takes input all kinds of files)
+#If you get a file unsupported, please report me.
 
 #THIS PROGRAM CHECKS THE BALANCE OF BRACKETS IN A CODE.
 #IT CHECKS IF A BRACKET WHICH WAS OPENED, IS CLOSED OR NOT.
@@ -40,9 +41,17 @@ def checkBalance(brackets):
             #checking for opening brackets and then adding them to stack
             stack.append(ch)                       
             c=c+1
-        elif((ch == ")") or (ch == "}") or (ch == "]")):
-            #assigning the last value entered in the stack to "lastElement"
-            lastElement = stack[-1]                                       
+        elif((ch == ")") or (ch == "}") or (ch == "]")): 
+
+            #checking if the list/array is empty, if yes, then breaking out of the loop  
+            if(len(stack) ==0):
+                #updating value of c for false output
+                c=c+1
+                break
+            else:
+                #assigning the last value entered in the stack to "lastElement"
+                lastElement = stack[-1]
+
             if(checkBrackets(lastElement)==checkBrackets(ch)):
                 #deleting element from the stack if entered and last value matched
                 stack.pop()                                                   
@@ -67,7 +76,11 @@ i=0
 
 while(N!=0):
     print("EXPRESSION NO: %s"%(i+1))
-    user_input = input("Enter your expression: ")
+    
+    #taking file input path
+    INP = input("Enter your path/File location: ")
+    with open(INP) as thisCode:
+        user_input = thisCode.read()
 
     #main fuction calls going here
     #checking even if brackets exists, if yes it checks balance
@@ -83,5 +96,5 @@ while(N!=0):
     i=i+1
     N=N-1
     print()
-    
-#END OF CODE
+
+    #END OF CODE
